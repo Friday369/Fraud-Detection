@@ -3,7 +3,10 @@
 A production-style service that scores trading accounts for abuse (bots, trial abuse, multi-accounting) and explains every flag in plain English.
 Tick a box (`[x]`) when a task is done. Update the "Status" line at the top of each phase.
 
+**Workflow for every phase:** try each step in that phase's notebook first to understand it, then move the working code into `src/` and have the notebook import it from there. Logic lives in `src/`; notebooks are for learning and demos.
+
 **Overall progress:** 0 / 8 phases complete
+**Scope:** core = Phases 1-8 (ends with the local API and wrap-up). Stretch items are parked at the bottom; do not start them until the core is done.
 
 ---
 
@@ -41,6 +44,7 @@ Tick a box (`[x]`) when a task is done. Update the "Status" line at the top of e
 - [ ] Add a validation step (column types, value ranges, no missing values)
 - [ ] Write a unit test (row counts, about 3% anomaly rate, no label columns in the features file)
 - [ ] Write `docs/data_assumptions.md` stating clearly that the data is simulated and how each pattern was created
+- [ ] Build `notebooks/02_data_generation.ipynb` (imports the generator and shows how each account type is created, with sample rows and a chart)
 
 **Can I explain:** why the data is simulated, how each abuse type was created, why half the anomalies are subtle, and why labels are in a separate file?  [ ]
 
@@ -59,7 +63,7 @@ Tick a box (`[x]`) when a task is done. Update the "Status" line at the top of e
 - [ ] Make a correlation heatmap of the features
 - [ ] Write a one-sentence takeaway under every chart
 - [ ] Save all figures to `docs/figures/`
-- [ ] Confirm the notebook runs top to bottom from a fresh start (`notebooks/01_eda.ipynb`)
+- [ ] Confirm the notebook runs top to bottom from a fresh start (`notebooks/03_eda.ipynb`)
 - [ ] Write a short "Findings" section (5 to 6 bullet points)
 
 **Can I explain:** which features separate each abuse type, where subtle anomalies overlap with normal accounts, and what this means for the features I build next?  [ ]
@@ -84,6 +88,7 @@ Tick a box (`[x]`) when a task is done. Update the "Status" line at the top of e
 - [ ] Write `docs/feature_rationales.md` (one line per feature, in my own words)
 - [ ] Write `tests/test_features.py` (output columns, no missing values, zero-baseline case, scaler reloads identically)
 - [ ] Confirm the feature code never touches `labels.csv`
+- [ ] Build `notebooks/04_features.ipynb` (each feature built on a few example accounts, before and after scaling)
 
 **Can I explain:** what each feature measures, what scaling is, why the scaler is saved, and why the same feature code runs in training and serving?  [ ]
 
@@ -108,6 +113,7 @@ Tick a box (`[x]`) when a task is done. Update the "Status" line at the top of e
 - [ ] Write a plain-English conclusion (report what the results actually show)
 - [ ] Write `tests/test_models.py` (score shape, exactly 3% flagged, same seed gives same results)
 - [ ] Add a single command that runs the full experiment
+- [ ] Build `notebooks/05_models_evaluation.ipynb` (score both methods, show flagged accounts, plot results)
 
 **Can I explain:** how a z-score works, how Isolation Forest works intuitively, why the alert budget is fairer than a contamination rate, precision vs. recall, and why I ran 5 seeds?  [ ]
 
@@ -125,18 +131,18 @@ Tick a box (`[x]`) when a task is done. Update the "Status" line at the top of e
 - [ ] Measure explanation quality against the labels (does the explanation point at the manipulated feature?)
 - [ ] Write `tests/test_explain.py` (non-empty explanations, quoted values match input, edge cases)
 - [ ] Add a short doc note on how explanation quality was checked
+- [ ] Build `notebooks/06_explanations.ipynb` (flagged accounts shown next to their explanations)
 
 **Can I explain:** why explanations matter to reviewers, how the top two features are chosen, why templates are used instead of free-form text, and what the limits are?  [ ]
 
 ---
 
-## Phase 7: Serving (API, Tests, Docker, CI)
+## Phase 7: API and Tests
 **Status:** Not started
-**Goal:** Wrap the system in a tested, containerized service that runs the same on any machine.
+**Goal:** Serve the system through a small, tested API that runs on my machine.
 
 **API (FastAPI)**
-- [ ] Write `src/api.py` with `POST /score`
-- [ ] Add `POST /score-batch` (top 3% flagged across the batch)
+- [ ] Write `src/api.py` with `POST /score` (returns score, flagged, explanation)
 - [ ] Add `GET /health`
 - [ ] Load the scaler and model once at startup
 - [ ] Run every request through `build_features()`, the model, and the explanation function
@@ -150,40 +156,19 @@ Tick a box (`[x]`) when a task is done. Update the "Status" line at the top of e
 - [ ] Write `tests/test_api.py` (valid input, missing fields, a known obvious abuser is flagged)
 - [ ] Add an end-to-end test (raw input to explanation)
 - [ ] Confirm the whole test suite passes together
+- [ ] Start the API locally and send a real request to it
 
-**Docker**
-- [ ] Write the `Dockerfile`
-- [ ] Pin library versions in `requirements.txt`
-- [ ] `docker build` and `docker run` work from a clean state
-
-**CI**
-- [ ] Add `.github/workflows/tests.yml` to run tests on every push
-- [ ] Add the pass/fail badge to the README
-
-**Can I explain:** what an API is and why it beats a notebook, why models load once at startup, what Docker solves, what CI does, and why the single-account cutoff differs from the batch budget?  [ ]
+**Can I explain:** what an API is and why it beats a notebook, why models load once at startup, why the single-account cutoff differs from the 3% batch budget, and how input validation protects the service?  [ ]
 
 ---
 
-## Phase 8: Monitoring, Documentation, and Handoff
+## Phase 8: Wrap-up (README, Resume, Interview Prep)
 **Status:** Not started
-**Goal:** Know when the system degrades, and document it so someone else could take over.
+**Goal:** Make the project easy for a recruiter to understand and easy for me to talk about.
 
-**Drift monitoring**
-- [ ] Save a reference summary of the training features
-- [ ] Write `src/monitor.py` (compare a new batch to the reference using PSI or the KS test)
-- [ ] Output a drift report (which features drifted, by how much, "OK" or "Review model")
-- [ ] Track the share of accounts flagged (alert if far from 3%)
-- [ ] Create a shifted batch and show the monitor catching it
-- [ ] Write `tests/test_monitor.py` (no drift on matching data, drift detected on the shifted batch)
-- [ ] Make the monitor runnable from one command
-
-**Documentation**
-- [ ] Finish the README (problem, users, how it works, results table from code, how to run with and without Docker, API examples, test badge, limitations)
-- [ ] Write `docs/model_card.md` (purpose, simulated training data, evaluation, weaknesses, what not to use it for)
-- [ ] Write `docs/runbook.md` (what to do on "Review model", how to retrain, how to roll back)
-- [ ] Write the limitations and next-steps section
-
-**Final cleanup**
+**README and cleanup**
+- [ ] Finish the README (problem, users, how it works, results table from code, how to run, API example, limitations)
+- [ ] Add a "what I would do next" section (stretch ideas, described honestly as not built)
 - [ ] Remove clutter (scratch notebooks, notes to self, unused files)
 - [ ] Confirm a fresh clone runs from the README alone
 - [ ] Tidy commit history and folder names
@@ -194,14 +179,60 @@ Tick a box (`[x]`) when a task is done. Update the "Status" line at the top of e
 - [ ] Write a 2-minute walkthrough
 - [ ] Prepare answers to likely questions, especially "Why trust results on simulated data?"
 
-**Can I explain:** what drift is, how the monitor decides something changed, what a model card is for, and what the project does not do?  [ ]
+**Can I explain:** the whole project in 30 seconds, and what it does not do and why I say so openly?  [ ]
 
 ---
 
-## Final Checklist
+## Core Final Checklist
 
-- [ ] All 8 phases ticked off
-- [ ] All tests pass locally and in CI
+- [ ] Phases 1-8 all ticked off
+- [ ] All tests pass locally
 - [ ] README states the data is simulated and lists limitations
 - [ ] No claims on the resume that the project does not back up
 - [ ] I can explain every part of the project without notes
+
+---
+
+# STRETCH (PARKED): do not start until the core is done
+
+**Stretch progress:** 0 / 5. Suggested order: S1 to S5. Add each only once I can explain the previous part. Add a resume claim only after its item is built.
+
+## S1: Docker
+- [ ] Write the `Dockerfile`
+- [ ] Pin library versions in `requirements.txt`
+- [ ] `docker build` and `docker run` work from a clean state
+- [ ] Add run instructions to the README
+
+**Can I explain:** what Docker solves and why pinned versions matter?  [ ]
+
+## S2: CI (GitHub Actions)
+- [ ] Add `.github/workflows/tests.yml` to run tests on every push
+- [ ] Add the pass/fail badge to the README
+
+**Can I explain:** what CI does and why it catches broken changes early?  [ ]
+
+## S3: Batch Endpoint
+- [ ] Add `POST /score-batch` (top 3% flagged across the batch)
+- [ ] Add tests for the batch endpoint
+- [ ] Update `docs/api.md`
+- [ ] (Optional) Build `notebooks/07_api_demo.ipynb` (send sample requests to the running API and show the responses)
+
+**Can I explain:** why batch flagging uses the 3% budget while single scoring uses a fixed cutoff?  [ ]
+
+## S4: Drift Monitoring
+- [ ] Save a reference summary of the training features (`artifacts/reference_stats.json`)
+- [ ] Write `src/monitor.py` (compare a new batch to the reference using PSI or the KS test)
+- [ ] Output a drift report (which features drifted, by how much, "OK" or "Review model")
+- [ ] Track the share of accounts flagged (alert if far from 3%)
+- [ ] Create a shifted batch and show the monitor catching it
+- [ ] Write `tests/test_monitor.py` (no drift on matching data, drift detected on the shifted batch)
+- [ ] Make the monitor runnable from one command
+- [ ] (Optional) Build `notebooks/08_monitoring_demo.ipynb`
+
+**Can I explain:** what drift is, why models degrade, and how the monitor decides something changed?  [ ]
+
+## S5: Model Card and Runbook
+- [ ] Write `docs/model_card.md` (purpose, simulated training data, evaluation, weaknesses, what not to use it for)
+- [ ] Write `docs/runbook.md` (what to do on "Review model", how to retrain, how to roll back; needs S4)
+
+**Can I explain:** what a model card is for and what each runbook step means?  [ ]
