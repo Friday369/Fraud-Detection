@@ -1,0 +1,11 @@
+# config.yaml: every number the generator needs lives here
+seed: 42
+
+accounts:
+  n_normal: 3000          # normal accounts
+  n_per_abuse_type: 33    # trial abuse, multi-account, bot (33 each)
+  subtle_fraction: 0.5    # half of each abuse type is the subtle version
+
+paths:
+  features: data/features.csv
+  labels: data/labels.csv
