@@ -54,17 +54,17 @@ Tick a box (`[x]`) when a task is done. Update the "Status" line at the top of e
 **Status:** Not started
 **Goal:** Understand how abusive accounts differ from normal ones and where they hide.
 
-- [ ] Run the health check (shape, data types, missing values, summary statistics)
-- [ ] Chart: trades per day, normal vs. abusive (log scale)
-- [ ] Chart: linked account count by account type
-- [ ] Chart: timing regularity, normal vs. bot (histogram)
-- [ ] Chart: account age vs. trades per day (scatter, colored by type)
-- [ ] Plot obvious vs. subtle anomalies separately to find the overlap with normal accounts
-- [ ] Make a correlation heatmap of the features
-- [ ] Write a one-sentence takeaway under every chart
-- [ ] Save all figures to `docs/figures/`
-- [ ] Confirm the notebook runs top to bottom from a fresh start (`notebooks/03_eda.ipynb`)
-- [ ] Write a short "Findings" section (5 to 6 bullet points)
+- [x] Run the health check (shape, data types, missing values, summary statistics)
+- [x] Chart: trades per day, normal vs. abusive (log scale)
+- [x] Chart: linked account count by account type
+- [x] Chart: timing regularity, normal vs. bot (histogram)
+- [x] Chart: account age vs. trades per day (scatter, colored by type)
+- [x] Plot obvious vs. subtle anomalies separately to find the overlap with normal accounts
+- [x] Make a correlation heatmap of the features
+- [x] Write a one-sentence takeaway under every chart
+- [x] Save all figures to `docs/figures/`
+- [x] Confirm the notebook runs top to bottom from a fresh start (`notebooks/03_eda.ipynb`)
+- [x] Write a short "Findings" section (5 to 6 bullet points)
 
 **Can I explain:** which features separate each abuse type, where subtle anomalies overlap with normal accounts, and what this means for the features I build next?  [ ]
 
