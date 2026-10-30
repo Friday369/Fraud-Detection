@@ -3,7 +3,7 @@
 A production-style service that scores trading accounts for abuse (bots, trial abuse, multi-accounting) and explains every flag in plain English.
 Tick a box (`[x]`) when a task is done. Update the "Status" line at the top of each phase.
 
-**Workflow for every phase:** try each step in that phase's notebook first to understand it, then move the working code into `src/` and have the notebook import it from there. Logic lives in `src/`; notebooks are for learning and demos.
+**Workflow for every phase:** write and understand the full working code in that phase's notebook first (my main material for revising), then copy the same logic into `src/` for the tests and the API. Keep the notebook and `src/` in sync.
 
 **Overall progress:** 0 / 8 phases complete
 **Scope:** core = Phases 1-8 (ends with the local API and wrap-up). Stretch items are parked at the bottom; do not start them until the core is done.
@@ -14,16 +14,16 @@ Tick a box (`[x]`) when a task is done. Update the "Status" line at the top of e
 **Status:** Not started
 **Goal:** Decide what the system must do, for whom, and how success is measured, before writing code.
 
-- [ ] Write the problem statement (3 abuse types and why they matter to a trading platform)
-- [ ] Define the user (risk / support analyst) and the human-in-the-loop rule (no automatic bans)
-- [ ] Define the input (one row of account features) and output (score, flagged yes/no, one-sentence reason)
-- [ ] Define scoring modes: daily batch scoring and on-demand single-account API
-- [ ] Set the alert budget (flag the top 3% of accounts, not a fixed threshold)
-- [ ] Set success metrics (precision and recall at the 3% budget, per abuse type, averaged over 5 runs)
-- [ ] List non-goals (no auto-bans, no real-time streaming, no cloud deployment)
-- [ ] Write `docs/requirements.md` (one page)
-- [ ] Create the folder structure: `data/`, `src/`, `tests/`, `notebooks/`, `docs/`, `artifacts/`
-- [ ] Initialize the Git repo and make the first commit
+- [x] Write the problem statement (3 abuse types and why they matter to a trading platform)
+- [x] Define the user (risk / support analyst) and the human-in-the-loop rule (no automatic bans)
+- [x] Define the input (one row of account features) and output (score, flagged yes/no, one-sentence reason)
+- [x] Define scoring modes: daily batch scoring and on-demand single-account API
+- [x] Set the alert budget (flag the top 3% of accounts, not a fixed threshold)
+- [x] Set success metrics (precision and recall at the 3% budget, per abuse type, averaged over 5 runs)
+- [x] List non-goals (no auto-bans, no real-time streaming, no cloud deployment)
+- [x] Write `docs/requirements.md` (one page)
+- [x] Create the folder structure: `data/`, `src/`, `tests/`, `notebooks/`, `docs/`, `artifacts/`
+- [x] Initialize the Git repo and make the first commit
 
 **Can I explain:** who uses the system, why the top 3% instead of a fixed cutoff, and why a human stays in the loop?  [ ]
 
@@ -33,18 +33,18 @@ Tick a box (`[x]`) when a task is done. Update the "Status" line at the top of e
 **Status:** Not started
 **Goal:** Generate realistic trading accounts where I secretly know which ones are abusive.
 
-- [ ] Create `config.yaml` (random seed, account counts, fraction of subtle anomalies)
-- [ ] Write `src/generate_data.py`
-- [ ] Generate about 3,000 normal accounts (age, trades per day, baseline, linked accounts, timing regularity, order sources)
-- [ ] Generate about 33 trial-abuse accounts (half obvious, half subtle)
-- [ ] Generate about 33 multi-account cases (half obvious, half subtle)
-- [ ] Generate about 33 bot accounts (half obvious, half subtle)
-- [ ] Save features to `data/features.csv`
-- [ ] Save labels separately to `data/labels.csv` (`is_anomaly`, `anomaly_type`, `difficulty`)
-- [ ] Add a validation step (column types, value ranges, no missing values)
-- [ ] Write a unit test (row counts, about 3% anomaly rate, no label columns in the features file)
-- [ ] Write `docs/data_assumptions.md` stating clearly that the data is simulated and how each pattern was created
-- [ ] Build `notebooks/02_data_generation.ipynb` (imports the generator and shows how each account type is created, with sample rows and a chart)
+- [x] Create `config.yaml` (random seed, account counts, fraction of subtle anomalies)
+- [x] Write `src/generate_data.py`
+- [x] Generate about 3,000 normal accounts (age, trades per day, baseline, linked accounts, timing regularity)
+- [x] Generate about 33 trial-abuse accounts (half obvious, half subtle)
+- [x] Generate about 33 multi-account cases (half obvious, half subtle)
+- [x] Generate about 33 bot accounts (half obvious, half subtle)
+- [x] Save features to `data/features.csv`
+- [x] Save labels separately to `data/labels.csv` (`is_anomaly`, `anomaly_type`, `difficulty`)
+- [x] Add a validation step (column types, value ranges, no missing values)
+- [x] Write a unit test (row counts, about 3% anomaly rate, no label columns in the features file)
+- [x] Write `docs/data_assumptions.md` stating clearly that the data is simulated and how each pattern was created
+- [x] Build `notebooks/02_data_generation.ipynb` (full generator code step by step, showing how each account type is created, with sample rows and a chart)
 
 **Can I explain:** why the data is simulated, how each abuse type was created, why half the anomalies are subtle, and why labels are in a separate file?  [ ]
 
@@ -72,7 +72,7 @@ Tick a box (`[x]`) when a task is done. Update the "Status" line at the top of e
 
 ## Phase 4: Feature Pipeline
 **Status:** Not started
-**Goal:** Turn raw columns into six model-ready features with one reusable function used in both training and serving.
+**Goal:** Turn raw columns into five model-ready features with one reusable function used in both training and serving.
 
 - [ ] Write `build_features()` in `src/features.py`
 - [ ] Feature 1: account age
@@ -80,7 +80,6 @@ Tick a box (`[x]`) when a task is done. Update the "Status" line at the top of e
 - [ ] Feature 3: order spike ratio (handle the zero-baseline case)
 - [ ] Feature 4: linked account count
 - [ ] Feature 5: timing regularity
-- [ ] Feature 6: alert source count
 - [ ] Decide on a log transform for heavy-tailed columns (based on Phase 3)
 - [ ] Fit StandardScaler and save it to `artifacts/scaler.pkl`
 - [ ] Save the final feature list (so the API can reject bad inputs)
@@ -123,7 +122,7 @@ Tick a box (`[x]`) when a task is done. Update the "Status" line at the top of e
 **Status:** Not started
 **Goal:** Give every flagged account a short plain-English reason.
 
-- [ ] Write sentence templates for all six features in `src/explain.py`
+- [ ] Write sentence templates for all five features in `src/explain.py`
 - [ ] Build the explanation function (top two most unusual features per account)
 - [ ] Handle edge cases (zero baseline must not produce "infinite pace")
 - [ ] Generate `data/flagged_case_reviews.csv` (account ID, score, method, explanation)
