@@ -74,20 +74,20 @@ Tick a box (`[x]`) when a task is done. Update the "Status" line at the top of e
 **Status:** Not started
 **Goal:** Turn raw columns into five model-ready features with one reusable function used in both training and serving.
 
-- [ ] Write `build_features()` in `src/features.py`
-- [ ] Feature 1: account age
-- [ ] Feature 2: trades per day
-- [ ] Feature 3: order spike ratio (handle the zero-baseline case)
-- [ ] Feature 4: linked account count
-- [ ] Feature 5: timing regularity
-- [ ] Decide on a log transform for heavy-tailed columns (based on Phase 3)
-- [ ] Fit StandardScaler and save it to `artifacts/scaler.pkl`
-- [ ] Save the final feature list (so the API can reject bad inputs)
-- [ ] Save `data/feature_matrix.csv`
-- [ ] Write `docs/feature_rationales.md` (one line per feature, in my own words)
-- [ ] Write `tests/test_features.py` (output columns, no missing values, zero-baseline case, scaler reloads identically)
-- [ ] Confirm the feature code never touches `labels.csv`
-- [ ] Build `notebooks/04_features.ipynb` (each feature built on a few example accounts, before and after scaling)
+- [x] Write `build_features()` in `src/features.py`
+- [x] Feature 1: account age
+- [x] Feature 2: trades per day
+- [x] Feature 3: order spike ratio (handle the zero-baseline case)
+- [x] Feature 4: linked account count
+- [x] Feature 5: timing regularity
+- [x] Decide on a log transform for heavy-tailed columns (based on Phase 3)
+- [x] Fit StandardScaler and save it to `artifacts/scaler.pkl`
+- [x] Save the final feature list (so the API can reject bad inputs)
+- [x] Save `data/feature_matrix.csv`
+- [x] Write `docs/feature_rationales.md` (one line per feature, in my own words)
+- [x] Write `tests/test_features.py` (output columns, no missing values, zero-baseline case, scaler reloads identically)
+- [x] Confirm the feature code never touches `labels.csv`
+- [x] Build `notebooks/04_features.ipynb` (each feature built on a few example accounts, before and after scaling)
 
 **Can I explain:** what each feature measures, what scaling is, why the scaler is saved, and why the same feature code runs in training and serving?  [ ]
 
@@ -97,22 +97,22 @@ Tick a box (`[x]`) when a task is done. Update the "Status" line at the top of e
 **Status:** Not started
 **Goal:** Build two detectors, compare them honestly, and show the results are not luck.
 
-- [ ] Build Method A: z-score baseline (largest absolute z-score per account) in `src/models.py`
-- [ ] Build Method B: Isolation Forest in `src/models.py`
-- [ ] Score every account with both methods
-- [ ] Apply the 3% alert budget to both (no peeking at the true anomaly rate)
-- [ ] Compute precision, recall, and F1 for each method in `src/evaluate.py`
-- [ ] Compute recall per abuse type (trial abuse, multi-account, bot)
-- [ ] Compute recall for obvious vs. subtle anomalies
-- [ ] (Optional) Plot precision-recall curves
-- [ ] Repeat the full experiment with 5 random seeds and report mean and spread
-- [ ] Save the Isolation Forest to `artifacts/isolation_forest.pkl`
-- [ ] Save results to `data/model_comparison.csv`
-- [ ] Make 1 or 2 result charts
-- [ ] Write a plain-English conclusion (report what the results actually show)
-- [ ] Write `tests/test_models.py` (score shape, exactly 3% flagged, same seed gives same results)
-- [ ] Add a single command that runs the full experiment
-- [ ] Build `notebooks/05_models_evaluation.ipynb` (score both methods, show flagged accounts, plot results)
+- [x] Build Method A: z-score baseline (largest absolute z-score per account) in `src/models.py`
+- [x] Build Method B: Isolation Forest in `src/models.py`
+- [x] Score every account with both methods
+- [x] Apply the 3% alert budget to both (no peeking at the true anomaly rate)
+- [x] Compute precision, recall, and F1 for each method in `src/evaluate.py`
+- [x] Compute recall per abuse type (trial abuse, multi-account, bot)
+- [x] Compute recall for obvious vs. subtle anomalies
+- [x] (Optional) Plot precision-recall curves
+- [x] Repeat the full experiment with 5 random seeds and report mean and spread
+- [x] Save the Isolation Forest to `artifacts/isolation_forest.pkl`
+- [x] Save results to `data/model_comparison.csv`
+- [x] Make 1 or 2 result charts
+- [x] Write a plain-English conclusion (report what the results actually show)
+- [x] Write `tests/test_models.py` (score shape, exactly 3% flagged, same seed gives same results)
+- [x] Add a single command that runs the full experiment
+- [x] Build `notebooks/05_models_evaluation.ipynb` (score both methods, show flagged accounts, plot results)
 
 **Can I explain:** how a z-score works, how Isolation Forest works intuitively, why the alert budget is fairer than a contamination rate, precision vs. recall, and why I ran 5 seeds?  [ ]
 
