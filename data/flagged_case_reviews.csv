@@ -1,0 +1,187 @@
+account_id,suspicion_score,method,explanation
+ACC02495,0.747,isolation forest,Its trading is 23.9x its usual pace and it makes 317 trades per day.
+ACC02831,0.725,isolation forest,Its trading is 29.8x its usual pace and it makes 187 trades per day.
+ACC02370,0.72,isolation forest,Its trading is 25.6x its usual pace and it makes 139 trades per day.
+ACC00526,0.717,isolation forest,Its trading is 28.0x its usual pace and it makes 880 trades per day.
+ACC00267,0.713,isolation forest,Its trading is 20.1x its usual pace and it makes 477 trades per day.
+ACC02263,0.706,isolation forest,Its trading is 21.4x its usual pace and it makes 122 trades per day.
+ACC03036,0.705,isolation forest,Its trading is 15.4x its usual pace and it makes 863 trades per day.
+ACC01446,0.704,isolation forest,Its trading is 19.6x its usual pace and it makes 315 trades per day.
+ACC02802,0.703,isolation forest,Its trading is 17.0x its usual pace and it makes 260 trades per day.
+ACC01464,0.701,isolation forest,Its trading is 28.4x its usual pace and it makes 327 trades per day.
+ACC00756,0.7,isolation forest,Its trading is 13.4x its usual pace and it makes 114 trades per day.
+ACC01409,0.692,isolation forest,Its trading is 23.9x its usual pace and it makes 67 trades per day.
+ACC03061,0.692,isolation forest,Its trading is 16.5x its usual pace and it makes 132 trades per day.
+ACC01326,0.689,isolation forest,Its trading is 4.0x its usual pace and it makes 193 trades per day.
+ACC00657,0.686,isolation forest,Its trading is 20.5x its usual pace and it makes 88 trades per day.
+ACC02926,0.684,isolation forest,It shares a device or IP with 8 other accounts.
+ACC02549,0.683,isolation forest,It shares a device or IP with 9 other accounts and it is only 11 days old.
+ACC02881,0.679,isolation forest,Its trading is 13.9x its usual pace and it makes 301 trades per day.
+ACC01685,0.671,isolation forest,It shares a device or IP with 9 other accounts.
+ACC02508,0.67,isolation forest,It shares a device or IP with 6 other accounts.
+ACC02629,0.67,isolation forest,It shares a device or IP with 12 other accounts.
+ACC01505,0.669,isolation forest,It shares a device or IP with 10 other accounts.
+ACC02167,0.667,isolation forest,It shares a device or IP with 10 other accounts.
+ACC01490,0.666,isolation forest,It shares a device or IP with 9 other accounts.
+ACC02593,0.666,isolation forest,It shares a device or IP with 12 other accounts.
+ACC01345,0.663,isolation forest,It shares a device or IP with 10 other accounts.
+ACC00102,0.657,isolation forest,It shares a device or IP with 8 other accounts.
+ACC01698,0.657,isolation forest,Its trading is 15.5x its usual pace and it makes 53 trades per day.
+ACC00460,0.653,isolation forest,Its trading is 4.3x its usual pace and it makes 86 trades per day.
+ACC01903,0.651,isolation forest,It shares a device or IP with 11 other accounts and its trade timing is unusually regular.
+ACC02727,0.65,isolation forest,Its trading is 4.1x its usual pace and it makes 109 trades per day.
+ACC02925,0.65,isolation forest,Its trading is 4.8x its usual pace and it makes 78 trades per day.
+ACC02795,0.649,isolation forest,Its trading is 13.1x its usual pace and it is only 3 days old.
+ACC00201,0.641,isolation forest,It shares a device or IP with 8 other accounts and it is only 173 days old.
+ACC02779,0.64,isolation forest,It shares a device or IP with 3 other accounts and it makes 52 trades per day.
+ACC00982,0.638,isolation forest,Its trading is 4.8x its usual pace and it is only 1 day old.
+ACC02015,0.638,isolation forest,Its trading is 3.3x its usual pace and it was created today.
+ACC02739,0.638,isolation forest,Its trading is 4.4x its usual pace and it makes 36 trades per day.
+ACC01396,0.637,isolation forest,It shares a device or IP with 9 other accounts.
+ACC01457,0.633,isolation forest,It shares a device or IP with 4 other accounts.
+ACC01319,0.629,isolation forest,Its trading is 4.9x its usual pace and it makes 46 trades per day.
+ACC01427,0.628,isolation forest,It shares a device or IP with 8 other accounts.
+ACC02856,0.628,isolation forest,Its trading is 3.1x its usual pace and it makes 52 trades per day.
+ACC00750,0.627,isolation forest,It makes 92 trades per day and its trade timing is unusually regular.
+ACC00625,0.626,isolation forest,It shares a device or IP with 7 other accounts.
+ACC00162,0.624,isolation forest,It shares a device or IP with 4 other accounts and it makes 24 trades per day.
+ACC01150,0.624,isolation forest,Its trading is 4.5x its usual pace and it makes 45 trades per day.
+ACC01349,0.621,isolation forest,It makes 71 trades per day and it shares a device or IP with 2 other accounts.
+ACC02090,0.619,isolation forest,Its trading is 4.0x its usual pace and it makes 44 trades per day.
+ACC01278,0.618,isolation forest,Its trading is 3.8x its usual pace and it makes 43 trades per day.
+ACC00521,0.617,isolation forest,It shares a device or IP with 4 other accounts and its trade timing is unusually regular.
+ACC00746,0.617,isolation forest,Its trading is 3.8x its usual pace and it makes 48 trades per day.
+ACC02879,0.616,isolation forest,Its trading is 3.8x its usual pace and it makes 36 trades per day.
+ACC00644,0.615,isolation forest,Its trading is 3.7x its usual pace and it makes 39 trades per day.
+ACC02677,0.615,isolation forest,Its trading is 3.7x its usual pace and it makes 41 trades per day.
+ACC01259,0.614,isolation forest,It shares a device or IP with 6 other accounts.
+ACC00328,0.608,isolation forest,It shares a device or IP with 3 other accounts.
+ACC01511,0.606,isolation forest,It shares a device or IP with 4 other accounts and it makes 24 trades per day.
+ACC01817,0.603,isolation forest,It shares a device or IP with 4 other accounts.
+ACC02942,0.601,isolation forest,It shares a device or IP with 2 other accounts and its trade timing is unusually regular.
+ACC00287,0.599,isolation forest,Its trade timing is unusually regular and it shares a device or IP with 2 other accounts.
+ACC00193,0.598,isolation forest,It shares a device or IP with 2 other accounts.
+ACC01336,0.598,isolation forest,It makes 55 trades per day and it is only 7 days old.
+ACC02048,0.594,isolation forest,It shares a device or IP with 2 other accounts and it is only 23 days old.
+ACC00063,0.593,isolation forest,It makes 49 trades per day and it shares a device or IP with 2 other accounts.
+ACC01766,0.592,isolation forest,It shares a device or IP with 3 other accounts and its trading is 1.5x its usual pace.
+ACC00953,0.586,isolation forest,It shares a device or IP with 3 other accounts and it is only 46 days old.
+ACC02571,0.586,isolation forest,It shares a device or IP with 2 other accounts.
+ACC01946,0.584,isolation forest,It makes 52 trades per day and it is only 8 days old.
+ACC02985,0.584,isolation forest,It shares a device or IP with 2 other accounts.
+ACC00434,0.583,isolation forest,It is only 24 days old.
+ACC02975,0.583,isolation forest,It shares a device or IP with 2 other accounts.
+ACC03012,0.581,isolation forest,It shares a device or IP with 2 other accounts and its trade timing is unusually regular.
+ACC00441,0.577,isolation forest,No feature looks clearly suspicious on its own; review the account's raw values.
+ACC02786,0.577,isolation forest,Its trade timing is unusually regular.
+ACC01441,0.576,isolation forest,It shares a device or IP with 2 other accounts and it makes 34 trades per day.
+ACC01381,0.575,isolation forest,Its trade timing is unusually regular and it is only 28 days old.
+ACC02487,0.575,isolation forest,It shares a device or IP with 3 other accounts and its trade timing is unusually regular.
+ACC00117,0.574,isolation forest,It shares a device or IP with 2 other accounts and it is only 118 days old.
+ACC02288,0.574,isolation forest,It shares a device or IP with 2 other accounts and it is only 70 days old.
+ACC02471,0.573,isolation forest,It makes 27 trades per day.
+ACC02449,0.572,isolation forest,It makes 39 trades per day and it is only 20 days old.
+ACC01465,0.571,isolation forest,Its trade timing is unusually regular.
+ACC02266,0.569,isolation forest,It shares a device or IP with 2 other accounts and it is only 18 days old.
+ACC00963,0.567,isolation forest,Its trading is 1.9x its usual pace.
+ACC02341,0.566,isolation forest,Its trade timing is unusually regular and it is only 38 days old.
+ACC00717,0.565,isolation forest,It shares a device or IP with 2 other accounts and its trade timing is unusually regular.
+ACC02616,0.565,isolation forest,It shares a device or IP with 2 other accounts and it is only 87 days old.
+ACC02327,0.564,isolation forest,It makes 39 trades per day and its trading is 1.9x its usual pace.
+ACC01209,0.563,isolation forest,It makes 42 trades per day.
+ACC01530,0.563,isolation forest,It shares a device or IP with 2 other accounts.
+ACC02554,0.562,isolation forest,It shares a device or IP with 2 other accounts and it makes 21 trades per day.
+ACC00124,0.56,isolation forest,It shares a device or IP with 3 other accounts.
+ACC02593,13.605,z-score,It shares a device or IP with 12 other accounts.
+ACC02629,13.605,z-score,It shares a device or IP with 12 other accounts.
+ACC02831,12.871,z-score,Its trading is 29.8x its usual pace and it makes 187 trades per day.
+ACC01464,12.644,z-score,Its trading is 28.4x its usual pace and it makes 327 trades per day.
+ACC00526,12.582,z-score,Its trading is 28.0x its usual pace and it makes 880 trades per day.
+ACC01903,12.438,z-score,It shares a device or IP with 11 other accounts and its trade timing is unusually regular.
+ACC02370,12.174,z-score,Its trading is 25.6x its usual pace and it makes 139 trades per day.
+ACC02495,11.862,z-score,Its trading is 23.9x its usual pace and it makes 317 trades per day.
+ACC01409,11.857,z-score,Its trading is 23.9x its usual pace and it makes 67 trades per day.
+ACC02263,11.356,z-score,Its trading is 21.4x its usual pace and it makes 122 trades per day.
+ACC01345,11.271,z-score,It shares a device or IP with 10 other accounts.
+ACC01505,11.271,z-score,It shares a device or IP with 10 other accounts.
+ACC02167,11.271,z-score,It shares a device or IP with 10 other accounts.
+ACC00657,11.161,z-score,Its trading is 20.5x its usual pace and it makes 88 trades per day.
+ACC00267,11.066,z-score,Its trading is 20.1x its usual pace and it makes 477 trades per day.
+ACC01446,10.952,z-score,Its trading is 19.6x its usual pace and it makes 315 trades per day.
+ACC02802,10.329,z-score,Its trading is 17.0x its usual pace and it makes 260 trades per day.
+ACC03061,10.182,z-score,Its trading is 16.5x its usual pace and it makes 132 trades per day.
+ACC01396,10.104,z-score,It shares a device or IP with 9 other accounts.
+ACC01490,10.104,z-score,It shares a device or IP with 9 other accounts.
+ACC01685,10.104,z-score,It shares a device or IP with 9 other accounts.
+ACC02549,10.104,z-score,It shares a device or IP with 9 other accounts and it is only 11 days old.
+ACC01698,9.915,z-score,Its trading is 15.5x its usual pace and it makes 53 trades per day.
+ACC03036,9.885,z-score,Its trading is 15.4x its usual pace and it makes 863 trades per day.
+ACC02881,9.422,z-score,Its trading is 13.9x its usual pace and it makes 301 trades per day.
+ACC00756,9.271,z-score,Its trading is 13.4x its usual pace and it makes 114 trades per day.
+ACC02795,9.15,z-score,Its trading is 13.1x its usual pace and it is only 3 days old.
+ACC00102,8.937,z-score,It shares a device or IP with 8 other accounts.
+ACC00201,8.937,z-score,It shares a device or IP with 8 other accounts and it is only 173 days old.
+ACC01427,8.937,z-score,It shares a device or IP with 8 other accounts.
+ACC02926,8.937,z-score,It shares a device or IP with 8 other accounts.
+ACC00625,7.77,z-score,It shares a device or IP with 7 other accounts.
+ACC01259,6.603,z-score,It shares a device or IP with 6 other accounts.
+ACC02508,6.603,z-score,It shares a device or IP with 6 other accounts.
+ACC01319,5.0,z-score,Its trading is 4.9x its usual pace and it makes 46 trades per day.
+ACC00982,4.929,z-score,Its trading is 4.8x its usual pace and it is only 1 day old.
+ACC02925,4.919,z-score,Its trading is 4.8x its usual pace and it makes 78 trades per day.
+ACC01150,4.697,z-score,Its trading is 4.5x its usual pace and it makes 45 trades per day.
+ACC02739,4.584,z-score,Its trading is 4.4x its usual pace and it makes 36 trades per day.
+ACC00460,4.509,z-score,Its trading is 4.3x its usual pace and it makes 86 trades per day.
+ACC02727,4.347,z-score,Its trading is 4.1x its usual pace and it makes 109 trades per day.
+ACC00162,4.269,z-score,It shares a device or IP with 4 other accounts and it makes 24 trades per day.
+ACC00521,4.269,z-score,It shares a device or IP with 4 other accounts and its trade timing is unusually regular.
+ACC01457,4.269,z-score,It shares a device or IP with 4 other accounts.
+ACC01511,4.269,z-score,It shares a device or IP with 4 other accounts and it makes 24 trades per day.
+ACC01817,4.269,z-score,It shares a device or IP with 4 other accounts.
+ACC01326,4.253,z-score,Its trading is 4.0x its usual pace and it makes 193 trades per day.
+ACC02090,4.196,z-score,Its trading is 4.0x its usual pace and it makes 44 trades per day.
+ACC01278,4.065,z-score,Its trading is 3.8x its usual pace and it makes 43 trades per day.
+ACC00746,4.024,z-score,Its trading is 3.8x its usual pace and it makes 48 trades per day.
+ACC02879,4.02,z-score,Its trading is 3.8x its usual pace and it makes 36 trades per day.
+ACC00644,3.931,z-score,Its trading is 3.7x its usual pace and it makes 39 trades per day.
+ACC02677,3.909,z-score,Its trading is 3.7x its usual pace and it makes 41 trades per day.
+ACC01336,3.902,z-score,It makes 55 trades per day and it is only 7 days old.
+ACC02744,3.769,z-score,Its trade timing is unusually regular.
+ACC00069,3.765,z-score,Its trade timing is unusually regular.
+ACC01736,3.765,z-score,Its trade timing is unusually regular.
+ACC00867,3.75,z-score,Its trade timing is unusually regular and it is only 170 days old.
+ACC01281,3.746,z-score,Its trade timing is unusually regular.
+ACC00215,3.688,z-score,Its trade timing is unusually regular.
+ACC02766,3.688,z-score,Its trade timing is unusually regular.
+ACC01675,3.653,z-score,Its trade timing is unusually regular.
+ACC01755,3.647,z-score,It makes 150 trades per day and it is only 91 days old.
+ACC02786,3.626,z-score,Its trade timing is unusually regular.
+ACC01109,3.615,z-score,Its trade timing is unusually regular and it makes 40 trades per day.
+ACC02015,3.566,z-score,Its trading is 3.3x its usual pace and it was created today.
+ACC01465,3.565,z-score,Its trade timing is unusually regular.
+ACC02747,3.557,z-score,Its trade timing is unusually regular and it makes 50 trades per day.
+ACC02200,3.522,z-score,Its trade timing is unusually regular.
+ACC01381,3.515,z-score,Its trade timing is unusually regular and it is only 28 days old.
+ACC02083,3.484,z-score,Its trade timing is unusually regular and it makes 35 trades per day.
+ACC00792,3.453,z-score,Its trade timing is unusually regular.
+ACC02341,3.437,z-score,Its trade timing is unusually regular and it is only 38 days old.
+ACC01613,3.386,z-score,It makes 123 trades per day.
+ACC00958,3.304,z-score,It makes 115 trades per day.
+ACC02856,3.304,z-score,Its trading is 3.1x its usual pace and it makes 52 trades per day.
+ACC00511,3.172,z-score,It makes 104 trades per day and it is only 98 days old.
+ACC02014,3.141,z-score,It makes 102 trades per day.
+ACC00504,3.131,z-score,No feature looks clearly suspicious on its own; review the account's raw values.
+ACC00124,3.102,z-score,It shares a device or IP with 3 other accounts.
+ACC00328,3.102,z-score,It shares a device or IP with 3 other accounts.
+ACC00591,3.102,z-score,It shares a device or IP with 3 other accounts.
+ACC00953,3.102,z-score,It shares a device or IP with 3 other accounts and it is only 46 days old.
+ACC01146,3.102,z-score,It shares a device or IP with 3 other accounts.
+ACC01766,3.102,z-score,It shares a device or IP with 3 other accounts and its trading is 1.5x its usual pace.
+ACC02487,3.102,z-score,It shares a device or IP with 3 other accounts and its trade timing is unusually regular.
+ACC02506,3.102,z-score,It shares a device or IP with 3 other accounts.
+ACC02570,3.102,z-score,It shares a device or IP with 3 other accounts.
+ACC02779,3.102,z-score,It shares a device or IP with 3 other accounts and it makes 52 trades per day.
+ACC03059,3.102,z-score,It shares a device or IP with 3 other accounts.
+ACC01147,3.079,z-score,It makes 97 trades per day and it is only 12 days old.
+ACC00530,3.062,z-score,No feature looks clearly suspicious on its own; review the account's raw values.
+ACC00750,3.002,z-score,It makes 92 trades per day and its trade timing is unusually regular.
