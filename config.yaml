@@ -9,3 +9,9 @@ accounts:
 paths:
   features: data/features.csv
   labels: data/labels.csv
+
+api:
+  scaler_path: artifacts/scaler.pkl
+  model_path: artifacts/isolation_forest.pkl
+  score_cutoff: 0.5603127544205471
+  # paste the printed cutoff he

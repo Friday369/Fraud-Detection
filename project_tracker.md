@@ -122,15 +122,15 @@ Tick a box (`[x]`) when a task is done. Update the "Status" line at the top of e
 **Status:** Not started
 **Goal:** Give every flagged account a short plain-English reason.
 
-- [ ] Write sentence templates for all five features in `src/explain.py`
-- [ ] Build the explanation function (top two most unusual features per account)
-- [ ] Handle edge cases (zero baseline must not produce "infinite pace")
-- [ ] Generate `data/flagged_case_reviews.csv` (account ID, score, method, explanation)
-- [ ] Spot-check 10 to 15 explanations by hand against the raw data
-- [ ] Measure explanation quality against the labels (does the explanation point at the manipulated feature?)
-- [ ] Write `tests/test_explain.py` (non-empty explanations, quoted values match input, edge cases)
-- [ ] Add a short doc note on how explanation quality was checked
-- [ ] Build `notebooks/06_explanations.ipynb` (flagged accounts shown next to their explanations)
+- [x] Write sentence templates for all five features in `src/explain.py`
+- [x] Build the explanation function (top two most unusual features per account)
+- [x] Handle edge cases (zero baseline must not produce "infinite pace")
+- [x] Generate `data/flagged_case_reviews.csv` (account ID, score, method, explanation)
+- [x] Spot-check 10 to 15 explanations by hand against the raw data
+- [x] Measure explanation quality against the labels (does the explanation point at the manipulated feature?)
+- [x] Write `tests/test_explain.py` (non-empty explanations, quoted values match input, edge cases)
+- [x] Add a short doc note on how explanation quality was checked
+- [x] Build `notebooks/06_explanations.ipynb` (flagged accounts shown next to their explanations)
 
 **Can I explain:** why explanations matter to reviewers, how the top two features are chosen, why templates are used instead of free-form text, and what the limits are?  [ ]
 
