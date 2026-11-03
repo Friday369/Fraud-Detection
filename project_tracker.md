@@ -5,8 +5,8 @@ Tick a box (`[x]`) when a task is done. Update the "Status" line at the top of e
 
 **Workflow for every phase:** write and understand the full working code in that phase's notebook first (my main material for revising), then copy the same logic into `src/` for the tests and the API. Keep the notebook and `src/` in sync.
 
-**Overall progress:** 0 / 8 phases complete
-**Scope:** core = Phases 1-8 (ends with the local API and wrap-up). Stretch items are parked at the bottom; do not start them until the core is done.
+**Overall progress:** 0 / 9 phases complete
+**Scope:** core = Phases 1-9 (local API, Streamlit review page, wrap-up). Stretch items are parked at the bottom; do not start them until the core is done.
 
 ---
 
@@ -141,32 +141,52 @@ Tick a box (`[x]`) when a task is done. Update the "Status" line at the top of e
 **Goal:** Serve the system through a small, tested API that runs on my machine.
 
 **API (FastAPI)**
-- [ ] Write `src/api.py` with `POST /score` (returns score, flagged, explanation)
-- [ ] Add `GET /health`
-- [ ] Load the scaler and model once at startup
-- [ ] Run every request through `build_features()`, the model, and the explanation function
-- [ ] Add input validation with clear error messages
-- [ ] Save a score cutoff from training data for single-account flagging and document it
-- [ ] Add basic logging (request time and result, no sensitive data)
-- [ ] Move paths and the cutoff into `config.yaml`
-- [ ] Write `docs/api.md` with example requests and responses
+- [x] Write `src/api.py` with `POST /score` (returns score, flagged, explanation)
+- [x] Add `GET /health`
+- [x] Load the scaler and model once at startup
+- [x] Run every request through `build_features()`, the model, and the explanation function
+- [x] Add input validation with clear error messages
+- [x] Save a score cutoff from training data for single-account flagging and document it
+- [x] Add basic logging (request time and result, no sensitive data)
+- [x] Move paths and the cutoff into `config.yaml`
+- [x] Write `docs/api.md` with example requests and responses
 
 **Tests**
-- [ ] Write `tests/test_api.py` (valid input, missing fields, a known obvious abuser is flagged)
-- [ ] Add an end-to-end test (raw input to explanation)
-- [ ] Confirm the whole test suite passes together
-- [ ] Start the API locally and send a real request to it
+- [x] Write `tests/test_api.py` (valid input, missing fields, a known obvious abuser is flagged)
+- [x] Add an end-to-end test (raw input to explanation)
+- [x] Confirm the whole test suite passes together
+- [x] Start the API locally and send a real request to it
 
 **Can I explain:** what an API is and why it beats a notebook, why models load once at startup, why the single-account cutoff differs from the 3% batch budget, and how input validation protects the service?  [ ]
 
 ---
 
-## Phase 8: Wrap-up (README, Resume, Interview Prep)
+## Phase 8: Streamlit Review Page
+**Status:** Not started
+**Goal:** A simple local page where an analyst types only an account ID and sees the score, flagged or not, and the reason. Uses the existing API; no API changes.
+
+- [x] Write `src/lookup.py` with `get_account(account_id, table)` (5 raw fields, `linked_account_count` as int, no `account_id`, `None` if not found, strips spaces, any case)
+- [x] Write `tests/test_lookup.py` (known ID, unknown ID, no `account_id`, int check, spaces and lowercase)
+- [x] Add `api.url` to `config.yaml`
+- [x] Pin `streamlit` and `requests` in `requirements.txt`
+- [x] Write `app.py` (title, account ID box in a form, Score button, score, flagged / not flagged, reason)
+- [x] Load `features.csv` once (cached), read the API address from `config.yaml`
+- [x] Friendly messages for empty input, unknown ID, API not running, and non-200 replies
+- [x] Confirm the whole test suite still passes (`pytest`)
+- [x] Manual check with two terminals: a normal account, a flagged account, a made-up ID, an empty box, the API stopped
+- [x] Write `docs/streamlit_page.md` (how to run both processes, honest limits: simulated data, local demo only)
+- [x] Save one screenshot to `docs/figures/` for the README
+
+**Can I explain:** why the analyst types only an ID, why the lookup is a separate tested function, why the page calls the API instead of loading the model, why `account_id` is removed before the request, why single-account flagging uses a saved cutoff, and what the page does not do?  [ ]
+
+---
+
+## Phase 9: Wrap-up (README, Resume, Interview Prep)
 **Status:** Not started
 **Goal:** Make the project easy for a recruiter to understand and easy for me to talk about.
 
 **README and cleanup**
-- [ ] Finish the README (problem, users, how it works, results table from code, how to run, API example, limitations)
+- [ ] Finish the README (problem, users, how it works, results table from code, how to run both the API and the Streamlit page, API example, Streamlit screenshot, limitations)
 - [ ] Add a "what I would do next" section (stretch ideas, described honestly as not built)
 - [ ] Remove clutter (scratch notebooks, notes to self, unused files)
 - [ ] Confirm a fresh clone runs from the README alone
@@ -184,7 +204,7 @@ Tick a box (`[x]`) when a task is done. Update the "Status" line at the top of e
 
 ## Core Final Checklist
 
-- [ ] Phases 1-8 all ticked off
+- [ ] Phases 1-9 all ticked off
 - [ ] All tests pass locally
 - [ ] README states the data is simulated and lists limitations
 - [ ] No claims on the resume that the project does not back up
