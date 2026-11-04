@@ -186,11 +186,11 @@ Tick a box (`[x]`) when a task is done. Update the "Status" line at the top of e
 **Goal:** Make the project easy for a recruiter to understand and easy for me to talk about.
 
 **README and cleanup**
-- [ ] Finish the README (problem, users, how it works, results table from code, how to run both the API and the Streamlit page, API example, Streamlit screenshot, limitations)
-- [ ] Add a "what I would do next" section (stretch ideas, described honestly as not built)
-- [ ] Remove clutter (scratch notebooks, notes to self, unused files)
-- [ ] Confirm a fresh clone runs from the README alone
-- [ ] Tidy commit history and folder names
+- [x] Finish the README (problem, users, how it works, results table from code, how to run both the API and the Streamlit page, API example, Streamlit screenshot, limitations)
+- [x] Add a "what I would do next" section (stretch ideas, described honestly as not built)
+- [x] Remove clutter (scratch notebooks, notes to self, unused files)
+- [x] Confirm a fresh clone runs from the README alone
+- [x] Tidy commit history and folder names
 
 **Resume and interview prep**
 - [ ] Write a 2 to 3 line resume entry with my real numbers
@@ -204,10 +204,10 @@ Tick a box (`[x]`) when a task is done. Update the "Status" line at the top of e
 
 ## Core Final Checklist
 
-- [ ] Phases 1-9 all ticked off
-- [ ] All tests pass locally
-- [ ] README states the data is simulated and lists limitations
-- [ ] No claims on the resume that the project does not back up
+- [x] Phases 1-9 all ticked off
+- [x] All tests pass locally
+- [x] README states the data is simulated and lists limitations
+- [x] No claims on the resume that the project does not back up
 - [ ] I can explain every part of the project without notes
 
 ---
